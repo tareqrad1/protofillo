@@ -1,0 +1,190 @@
+:root {
+    --paragraph-color:#202020;
+    --black-text:#000;
+    --blue-text:rgba(0, 101, 255, 1);
+    --white-color:#FFFFFF;
+    --bag-thing:rgb(242 244 246);
+    --paragraphTow-color:#656D72;
+    /* --bag-thing:rgba(248, 249, 250, 1); */
+}
+/* start the navbar */
+body {
+    overflow-x: hidden;
+}
+/* start the navbar */
+nav {
+    background-color: var(--white-color);
+    box-shadow: 0px 25px 65px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+nav.fixed {
+    position: fixed;
+    left: 0;
+    width:100%;
+    z-index: 1000;
+    transition: .5s ease;
+}
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 70px;
+    user-select: none;
+}
+/* left */
+nav .container .left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .container .left > img {
+    background: #000;
+    width: 50px;
+    mix-blend-mode: exclusion;
+}
+nav .container .left ul {
+    list-style: none;
+    display: flex;
+    margin-left: 20px;
+}
+nav .container .left ul > li:last-child {
+    color: red;
+}
+nav .container .left ul > li > a {
+    text-decoration: none;
+    color: var(--blue-text);
+    padding: 10px 20px;
+    cursor: pointer;
+    position: relative;
+}
+nav .container .left ul > li > a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 5px;
+    transform: translateX(-50%);
+    width: 14%;
+    height: 2px;
+    background: linear-gradient(to left, var(--blue-text),var(--black-text));
+    transition: .5s linear;
+}
+nav .container .left ul > li > a:hover::after {
+    width: 20px;
+}
+
+
+/* right */
+nav .container .right {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+nav .container > i {
+    display: none;
+}
+nav .container .right .socialMeadia {
+    margin-right: 50px;
+}
+nav .container .right .socialMeadia > svg {
+    margin: 0 15px;
+    cursor: pointer;
+}
+nav .container .right .socialMeadia > svg > path:hover {
+    fill-opacity: .6;
+}
+nav .container .right .socialMeadia > svg > path {
+    fill: var(--blue-text);
+}
+nav .container .right .toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    user-select: none;
+}
+nav .container .right .toggle > h5 {
+    margin-right: 5px;
+    color: var(--black-text);
+}
+
+nav .container .right .toggle > .bg-toggle {
+    position: relative;
+    display: inline-block;
+}
+nav .container .right .toggle > .toggle-icon {
+    position: absolute;
+    top: 2px;
+    left: 85px;
+    cursor: pointer;
+    transition: .2s linear;
+}
+nav .container .right .toggle > .toggle-icon.active {
+    left: 104px;
+} 
+
+.menu-icon {
+    display: none;
+}
+
+/* responsive section */
+@media (max-width:992px) {
+    nav .container .left > ul {
+        display: none;
+    }
+    nav .container .right {
+        position: fixed;
+        right: 0;
+        bottom: 74%;
+        transform: translateX(150%);
+        box-shadow: 0px 2px 31px -7px rgba(0,0,0,1);
+        background-color: var(--white-color);
+        transition: 0.4s;
+        padding: 10px;
+        z-index: 10000;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+    nav .container .right.active {
+        transform: translateX(0px);
+    }
+    /* burrger icon */
+    .menu-icon {
+        width: 40px;
+        height: 30px;
+        cursor: pointer;
+        position: relative;
+    }
+    .menu-icon > span {
+        background-color: var(--black-text);
+        height: 4px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        transition:0.5s ease;
+    }
+    .menu-icon .one {
+        top: 0;
+    }
+    .menu-icon .two {
+        top: 13px;
+    }
+    .menu-icon .three {
+        top: 26px;
+    }
+    /* add classes in js */
+    .menu-icon .one.active1 {
+        top: 13px;
+        transform: rotate(45deg);
+    }
+    .menu-icon .two.active2 {
+        opacity: 0;
+    }
+    .menu-icon .three.active3 {
+        top: 13px;
+        transform: rotate(-45deg);
+    }
+    
+}
+/* end the navbar */

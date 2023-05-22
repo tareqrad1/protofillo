@@ -1,0 +1,112 @@
+.header {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.header .container > img {
+    height: 200px;
+    border-radius: 100px;
+    user-select: none;
+}
+.header .container > .names {
+    margin: 20px 0;
+    font-family: 'EB Garamond';
+}
+.header .container > .names > h1 {
+    font-size: 60px;
+    color: var(--blue-text);
+    user-select: none;
+}
+.header .container .about-me {
+    width: 960px;
+    max-width: 100%;
+}
+.header .container .about-me > p {
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 23px;
+    color: var(--paragraph-color);
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.header .container .say-hello {
+    background-color: var(--bag-thing);
+    width: fit-content;
+    padding: 10px;
+    margin-top: 30px;
+}
+.header .container .say-hello > p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--paragraph-color);
+}
+.header .container .say-hello > p > svg {
+    margin-right: 10px;
+}
+.header .container .say-hello > p > svg > path {
+    fill: var(--blue-text);
+}
+.header .container .say-hello > p > a {
+    color: var(--blue-text);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+@media (max-width:767px) {
+    .header {
+        padding: 20px 0;
+    }
+    .header .container > .names > h1 {
+        font-size: 30px;
+    }
+    .header .container .say-hello > p {
+        font-size: 12px;
+    }
+}
+
+
+
+
+
+/* start overlay */
+.intro {
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    flex-direction: column;
+    transition: 10s ease-in-out;
+    user-select: none;
+    z-index: 200000;
+}
+.intro > h1 {
+    width: 100%;
+    height: 100vh;
+    text-transform: capitalize;
+    font-family: arial;
+    padding: 3px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.intro2 {
+    background-color: #1a1a1a;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 20000;
+    transition: 3s ease-in-out;
+}
+@media (max-width:767px) {
+    .intro > h1 {
+        font-size: 20px;
+    }
+}
+/* end overlay */

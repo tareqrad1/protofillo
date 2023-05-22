@@ -1,0 +1,124 @@
+.skills {
+    padding: 40px 0;
+    margin: 40px 0;
+    position: relative;
+}
+.skills .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 40px;
+}
+.skills::before {
+    content: '';
+    background-color: var(--blue-text);
+    position: absolute;
+    left: 200px;
+    top: 0;
+    width: calc(100% - 400px);
+    height: 2px;
+}
+/* left */
+.skills .container .left > h1 {
+    color: var(--blue-text);
+}
+.skills .container .left .studying .box {
+    margin: 40px 0;
+    position: relative;
+}
+.skills .container .left .studying .box::before {
+    content: '';
+    background: var(--blue-text);
+    position: absolute;
+    left: -31px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.skills .container .left .studying .box::after {
+    content: '';
+    background-color: #eee;
+    position: absolute;
+    width: 2px;
+    height: 143%;
+    left: -26px;
+    top: 18px;
+}
+.skills .container .left .studying .box:nth-child(3):after {
+    content: '';
+    height: 0;
+}
+.skills .container .left .studying .box > h3 {
+    font-weight: normal;
+    color: var(--black-text);
+}
+.skills .container .left .studying .box > p {
+    padding: 10px 0;
+    color: var(--paragraphTow-color);
+}
+.skills .container .left .studying .box > dl {
+    color: var(--paragraph-color);
+    font-size: 14px;
+}
+/* right */
+.skills .container .right > p {
+    width: 610px;
+    line-height: 25px;
+    color: var(--paragraph-color);
+    font-size: 16px;
+}
+.skills .container .all {
+    margin-top: 58px;
+}
+.skills .container .all .progress {
+    width: 500px;
+    height: 20px;
+    background-color: var(--paragraphTow-color);
+    margin: 35px 0;
+    position: relative;
+}
+.skills .container .all .progress > span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--blue-text);
+    transition: width 0.5s linear;
+}
+.skills .container .all .progress span::after {
+    content: attr(data-name);
+    position: absolute;
+    top: -26px;
+    left: 0;
+    text-transform: capitalize;
+    color: var(--black-text);
+}
+
+@media (max-width:767px) {
+    .skills {
+        margin: 0;
+    }
+    .skills .container {
+        margin: 0;
+    }
+    .skills .container .left {
+        margin: 0 auto;
+    }
+    .skills .container .left .studying .box > p {
+        width: 283px;
+        font-size: 14px;
+    }
+    .skills .container .right > p {
+        width: auto;
+    }
+    .skills .container .all .progress {
+        width:auto;
+    }
+    .skills::before {
+        content: '';
+        width: 0;
+        height: 0;
+    }
+}
